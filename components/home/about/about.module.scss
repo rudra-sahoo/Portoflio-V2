@@ -1,0 +1,252 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2.4rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aboutText {
+  margin-bottom: 2.4rem;
+  font-weight: 200;
+
+  span{
+    background: var(--background-light);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    font-size: var(--text-md);
+    font-weight: bold;
+    margin-right: 0.6rem;
+    float: left;
+  }
+}
+
+// Current Project styles
+.currentProject {
+  background: rgba(var(--brand-rgb), 0.05);
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin: 2.5rem 0;
+  border-left: 3px solid var(--brand);
+  
+  h3 {
+    font-size: var(--text-md);
+    margin-bottom: 1rem;
+    color: var(--text);
+    
+    span {
+      color: var(--brand);
+      font-weight: bold;
+    }
+  }
+  
+  p {
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    
+    a {
+      color: var(--brand);
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--brand);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover {
+        opacity: 0.8;
+        
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+}
+
+.projectHighlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(var(--brand-rgb), 0.1);
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+}
+
+.projectLink {
+  a {
+    font-family: monospace;
+    font-size: var(--text-sm);
+    color: var(--brand);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+    }
+    
+    &::before {
+      content: '→';
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.projectStatus {
+  font-size: var(--text-xs);
+  background: rgba(var(--brand-rgb), 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  color: var(--brand);
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.linksText {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  font-size: var(--text-sm);
+  color: var(--brand);
+}
+
+/* Footer styles */
+.footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.footerLine {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(var(--brand-rgb), 0.3) 50%, 
+    transparent 100%
+  );
+  margin-bottom: 2rem;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(var(--brand-rgb), 0.1);
+    color: var(--brand);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: var(--brand);
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.footerText {
+  text-align: center;
+  font-size: var(--text-xs);
+  opacity: 0.7;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+
+.customHeading {
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+}
+
+.headingText {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  span {
+    display: inline-block;
+    opacity: 0;
+    color: var(--brand);
+    margin: 0 3px;
+    transform-origin: center;
+  }
+  
+  .space {
+    width: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 3.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 3rem;
+  }
+}
+
+.headingUnderline {
+  height: 4px;
+  width: 120px;
+  background: var(--brand);
+  margin: 0 auto;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+// Update the existing stats styles
+.statGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 4.8rem;
+
+  .chip {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      background: var(--brand);
+      color: var(--background);
+    }
+  }
+}
+
+
+

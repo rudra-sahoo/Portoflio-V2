@@ -1,0 +1,65 @@
+.navigation-wrapper {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: rgba(8, 8, 8, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--background-light);
+  color: var(--text);
+  border: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: var(--brand);
+    transform: translateY(-2px);
+  }
+  
+  &.active {
+    background-color: var(--brand);
+  }
+}
+
+.scroll {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--brand);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
