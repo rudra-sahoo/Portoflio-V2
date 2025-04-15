@@ -67,26 +67,22 @@ const Footer = () => {
 // Current Project highlighting DuckBuck
 const CurrentProject = () => {
   return (
-    <motion.div 
-      className={styles.currentProject}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-    >
-      <h3>Current Project: <span>DuckBuck</span></h3>
-      <p>
-        I&apos;m currently building <a href="https://duckbuck.in" target="_blank" rel="noopener noreferrer">DuckBuck</a>, an innovative walkie-talkie over the internet platform. This exciting project combines real-time audio communication with web technologies to create seamless voice interactions across devices and locations.
-      </p>
-      <div className={styles.projectHighlight}>
-        <div className={styles.projectLink}>
-          <a href="https://duckbuck.in" target="_blank" rel="noopener noreferrer">
-            duckbuck.in
-          </a>
+    <Reveal>
+      <div className={styles.currentProject}>
+        <h3>Current Project: <span>DuckBuck</span></h3>
+        <p>
+          I&apos;m currently building <a href="https://duckbuck.in" target="_blank" rel="noopener noreferrer">DuckBuck</a>, an innovative walkie-talkie over the internet platform. This exciting project combines real-time audio communication with web technologies to create seamless voice interactions across devices and locations.
+        </p>
+        <div className={styles.projectHighlight}>
+          <div className={styles.projectLink}>
+            <a href="https://duckbuck.in" target="_blank" rel="noopener noreferrer">
+              duckbuck.in
+            </a>
+          </div>
+          <p className={styles.projectStatus}>In development</p>
         </div>
-        <p className={styles.projectStatus}>In development</p>
       </div>
-    </motion.div>
+    </Reveal>
   );
 };
 

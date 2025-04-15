@@ -12,6 +12,10 @@ export const ScrollTop = () => {
   };
 
   const scrollToSection = (sectionId) => {
+    if (sectionId === "") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      return;
+    }
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -49,41 +53,43 @@ export const ScrollTop = () => {
   return (
     <div className={styles["navigation-wrapper"]}>
       {isVisible && (
-        <>
-          <div className={styles.navMenu}>
-            <button 
-              onClick={() => scrollToSection("")} 
-              className={`${styles.navButton} ${activeSection === "" ? styles.active : ""}`} 
-              title="Home"
-            >
-              <FaHome />
-            </button>
-            <button 
-              onClick={() => scrollToSection("about")} 
-              className={`${styles.navButton} ${activeSection === "about" ? styles.active : ""}`} 
-              title="About"
-            >
-              <FaUser />
-            </button>
-            <button 
-              onClick={() => scrollToSection("projects")} 
-              className={`${styles.navButton} ${activeSection === "projects" ? styles.active : ""}`} 
-              title="Projects"
-            >
-              <FaCode />
-            </button>
-            <button 
-              onClick={() => scrollToSection("contact")} 
-              className={`${styles.navButton} ${activeSection === "contact" ? styles.active : ""}`} 
-              title="Contact"
-            >
-              <FaEnvelope />
-            </button>
-          </div>
-          <button onClick={goToBtn} className={styles.scroll}>
+        <div className={styles.navMenu}>
+          <button 
+            onClick={() => scrollToSection("")} 
+            className={`${styles.navButton} ${activeSection === "" ? styles.active : ""}`} 
+            title="Home"
+          >
+            <FaHome />
+          </button>
+          <button 
+            onClick={() => scrollToSection("about")} 
+            className={`${styles.navButton} ${activeSection === "about" ? styles.active : ""}`} 
+            title="About"
+          >
+            <FaUser />
+          </button>
+          <button 
+            onClick={() => scrollToSection("projects")} 
+            className={`${styles.navButton} ${activeSection === "projects" ? styles.active : ""}`} 
+            title="Projects"
+          >
+            <FaCode />
+          </button>
+          <button 
+            onClick={() => scrollToSection("contact")} 
+            className={`${styles.navButton} ${activeSection === "contact" ? styles.active : ""}`} 
+            title="Contact"
+          >
+            <FaEnvelope />
+          </button>
+          <button 
+            onClick={goToBtn} 
+            className={`${styles.navButton} ${styles.scrollTop}`} 
+            title="Scroll to Top"
+          >
             <AiOutlineArrowUp />
           </button>
-        </>
+        </div>
       )}
     </div>
   );

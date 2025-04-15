@@ -3,10 +3,6 @@
   bottom: 1rem;
   right: 1rem;
   z-index: 999;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
 }
 
 .navMenu {
@@ -41,6 +37,13 @@
   
   &.active {
     background-color: var(--brand);
+  }
+
+  &.scrollTop {
+    color: var(--text);
+    &:hover {
+      background-color: var(--brand);
+    }
   }
 }
 
