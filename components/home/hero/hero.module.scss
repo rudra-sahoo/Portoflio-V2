@@ -21,23 +21,44 @@
   
   @media (max-width: 900px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding-left: 0;
+    text-align: center;
+    width: 100%;
+    
+    > .copyWrapper {
+      margin-top: 5rem; // This will add space only between image and text
+    }
+  }
+}
+
+.copyWrapper {
+  position: relative;
+  z-index: 10;
+  width: fit-content;
+  margin: 3rem 0;
+
+  @media (max-width: 900px) {
+    width: 100%; // Full width on mobile
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Center all content
   }
 }
 
 .imageContainer {
   flex-shrink: 0;
-  width: fit-content; // Contains the width to image size
-  height: fit-content; // Contains the height to image size
+  width: fit-content;
+  height: fit-content;
   transform-style: preserve-3d;
   perspective: 1000px;
-  display: flex; // Ensures container fits the image exactly
+  display: flex;
   justify-content: center;
   align-items: center;
   
   @media (max-width: 900px) {
     margin: 0 auto;
+    margin-bottom: 4rem; // Add space below the image in mobile view
   }
 }
 
